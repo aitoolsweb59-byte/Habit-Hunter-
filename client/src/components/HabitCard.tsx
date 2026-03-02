@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { Box, Typography, IconButton } from '@mui/material';
-import { CheckCircle, RadioButtonUnchecked, LocalFire, Delete } from '@mui/icons-material';
+import { CheckCircle, RadioButtonUnchecked, Whatshot, Delete } from '@mui/icons-material';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Habit } from '../types';
 import { rankColors } from '../theme';
@@ -100,7 +100,7 @@ const HabitCard: React.FC<Props> = ({ habit, onComplete, onDelete }) => {
               </Typography>
               {(habit.currentStreak ?? 0) > 0 && (
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 0.5 }}>
-                  <LocalFire sx={{ fontSize: 14, color: '#f59e0b' }} />
+                  <Whatshot sx={{ fontSize: 14, color: '#f59e0b' }} />
                   <Typography sx={{ fontSize: 12, color: '#f59e0b', fontWeight: 700 }}>
                     {habit.currentStreak} day streak
                   </Typography>

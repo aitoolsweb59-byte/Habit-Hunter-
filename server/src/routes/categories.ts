@@ -1,0 +1,11 @@
+import { Router } from 'express';
+import { requireAuth, extractUserId } from '../middleware/auth';
+import { getCategories, createCategory, updateCategory, deleteCategory } from '../controllers/categories';
+
+const router = Router();
+router.use(requireAuth, extractUserId);
+router.get('/', getCategories);
+router.post('/', createCategory);
+router.put('/:id', updateCategory);
+router.delete('/:id', deleteCategory);
+export default router;

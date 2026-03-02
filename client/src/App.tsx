@@ -5,7 +5,7 @@ import { ClerkProvider, SignIn, SignUp, useAuth } from '@clerk/clerk-react';
 import { soloLevelingTheme } from './theme';
 import Dashboard from './pages/Dashboard';
 
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+const PUBLISHABLE_KEY = (import.meta as any).env?.VITE_CLERK_PUBLISHABLE_KEY;
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isLoaded, isSignedIn } = useAuth();
